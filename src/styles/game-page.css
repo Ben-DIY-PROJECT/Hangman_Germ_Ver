@@ -1,0 +1,155 @@
+/* ============================================================
+   Keyframes
+   ============================================================ */
+@keyframes pageSlideUp {
+    from { opacity: 0; transform: translateY(36px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes letterSlideUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes resultSlideUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   Page
+   ============================================================ */
+.game-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    color: #fff;
+    padding: 3rem 2.25rem;
+    gap: 2.625rem;
+    animation: pageSlideUp 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+/* Board area: error counter + SVG */
+.game-page__board-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.game-page__error-count {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* Word display */
+.game-page__word {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.game-page__letter {
+    width: 3rem;
+    min-height: 4.2rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 2.625rem;
+    font-weight: 700;
+    border-bottom: 4px solid #fff;
+    padding-bottom: 0.225rem;
+    animation: letterSlideUp 0.4s ease both;
+}
+
+/* Bottom action row */
+.game-page__actions {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+/* Restart / home buttons */
+.game-page__restart {
+    padding: 0.825rem 3rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.game-page__restart:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Win / lose overlay */
+.game-page__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: overlayFadeIn 0.25s ease both;
+}
+
+.game-page__result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.875rem;
+    text-align: center;
+    animation: resultSlideUp 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) 0.1s both;
+}
+
+.game-page__result-title {
+    margin: 0;
+    font-size: clamp(4.5rem, 15vw, 9rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+}
+
+.game-page__result-title--won  { color: #4caf50; }
+.game-page__result-title--lost { color: #f44336; }
+
+.game-page__result-word {
+    margin: 0;
+    font-size: 1.875rem;
+    color: #ccc;
+}
+
+.game-page__result-button {
+    padding: 1.125rem 3.75rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #111;
+    background: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.game-page__result-button:hover { background: #e0e0e0; }
+

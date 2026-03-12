@@ -1,0 +1,46 @@
+@keyframes pageSlideUp {
+    from { opacity: 0; transform: translateY(36px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.start-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    background: #111;
+    animation: pageSlideUp 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.start-page__title {
+    margin: 0;
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.start-page__button {
+    padding: 1rem 3.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #111;
+    background: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.start-page__button:hover {
+    background: #e0e0e0;
+}
+
+.start-page__button:active {
+    background: #bdbdbd;
+}
